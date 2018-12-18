@@ -16,8 +16,9 @@ import sysdate.OutputDate;
 @RunWith(JMockit.class)
 public class FixSysDateUsingJMockit {
 
+	//private staticをつけないとダメ
 	@Mocked
-	OutputDate output = new OutputDate();
+	private static OutputDate output = new OutputDate();
 
 	@Before
 	public void setUp() throws Exception{
@@ -27,7 +28,6 @@ public class FixSysDateUsingJMockit {
 	@Test
 	public void test() {
 		output.getDate();
-		System.out.println(new Date());
 	}
 
 	private  void setDatemock() throws Exception {
